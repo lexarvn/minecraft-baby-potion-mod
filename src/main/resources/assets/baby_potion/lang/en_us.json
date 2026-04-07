@@ -1,0 +1,10 @@
+{
+  "effect.baby_potion.infantilism_effect": "Infantilism",
+  "item.minecraft.potion.effect.infantilism": "Potion of Infantilism",
+  "item.minecraft.splash_potion.effect.infantilism": "Splash Potion of Infantilism",
+  "item.minecraft.lingering_potion.effect.infantilism": "Lingering Potion of Infantilism",
+  "item.minecraft.tipped_arrow.effect.infantilism": "Arrow of Infantilism",
+  "attribute.name.baby_potion.maturity_scale": "Maturity",
+  "gamerule.baby_potion.scale_non_native_babies": "Custom Babies' Scaling",
+  "gamerule.baby_potion.scale_non_native_babies.description": "\"Off\": Mobs that don't natively have baby form are immune to the infantilism effect.\n\"On\": Simply scale down to the size of a baby. \"Chibi\": Try to match the chibi style of vanilla babies (requires clients to install mod)."
+}

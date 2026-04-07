@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "package": "lexarvn.baby_potion.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+    "AbstractHorseMixin",
+    "AvatarMixin",
+    "BabyStatusMixin",
+    "FrogMixin",
+    "LivingEntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}

@@ -1,0 +1,25 @@
+{
+	"required": true,
+	"package": "lexarvn.baby_potion.mixin.client",
+	"compatibilityLevel": "JAVA_25",
+	"client": [
+		"CreeperModelMixin",
+		"EnderManModelMixin",
+		"IllagerModelMixin",
+		"ItemInHandLayerMixin",
+		"LivingEntityRendererMixin",
+		"LivingEntityRenderStateMixin",
+		"PiglinModelMixin",
+		"PlayerModelMixin",
+		"SkeletonModelMixin",
+		"VillagerModelMixin",
+		"WardenModelMixin",
+		"WitchModelMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}
