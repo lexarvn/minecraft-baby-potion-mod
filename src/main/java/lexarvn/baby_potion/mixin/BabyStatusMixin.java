@@ -25,7 +25,7 @@ public class BabyStatusMixin {
   @Inject(method = "isBaby", at = @At("HEAD"), cancellable = true)
   public void forceBaby(CallbackInfoReturnable<Boolean> cir) {
     LivingEntity entity = (LivingEntity)(Object) this;
-    if (BabyUtils.maturityScaleIsBaby(entity)) {
+    if (BabyUtils.maturityScaleIsBaby(entity) && BabyUtils.isNativeBaby(entity)) {
       cir.setReturnValue(true);
     }
   }

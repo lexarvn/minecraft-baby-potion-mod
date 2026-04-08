@@ -20,14 +20,12 @@ public class PiglinModelMixin extends HumanoidModel<PiglinRenderState> {
 
   @Inject(method = "setupAnim", at = @At("TAIL"))
   public void applyHeadScale(final PiglinRenderState state, CallbackInfo ci) {
-    if (!((IChibiTweaksAccess) state).shouldUseChibiTweaks()){
-      return;
+    if (((IChibiTweaksAccess)state).shouldUseChibiTweaks()){
+      float headScale = state.isBrute ? 2.5f : 1.0f;
+
+      this.head.xScale = headScale;
+      this.head.yScale = headScale;
+      this.head.zScale = headScale;
     }
-
-    float headScale = state.isBrute && state.isBaby ? 2.5f : 1.0f;
-
-    this.head.xScale = headScale;
-    this.head.yScale = headScale;
-    this.head.zScale = headScale;
   }
 }

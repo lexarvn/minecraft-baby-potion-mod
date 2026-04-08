@@ -1,7 +1,6 @@
 package lexarvn.baby_potion.mixin.client;
 
 import lexarvn.baby_potion.IChibiTweaksAccess;
-import lexarvn.baby_potion.INativeBabyAccess;
 
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -20,15 +19,12 @@ public class VillagerModelMixin {
 
   @Inject(method = "setupAnim", at = @At("TAIL"))
   public void applyHeadScale(VillagerRenderState state, CallbackInfo ci) {
-    if (!((IChibiTweaksAccess) state).shouldUseChibiTweaks()){
-      return;
+    if (((IChibiTweaksAccess)state).shouldUseChibiTweaks()){
+      float headScale = 3.0f;
+
+      this.head.xScale = headScale;
+      this.head.yScale = headScale;
+      this.head.zScale = headScale;
     }
-
-    boolean isNativeBaby = ((INativeBabyAccess)state).getIsNativeBaby();
-    float headScale = !isNativeBaby && state.isBaby ? 3.0f : 1.0f;
-
-    this.head.xScale = headScale;
-    this.head.yScale = headScale;
-    this.head.zScale = headScale;
   }
 }

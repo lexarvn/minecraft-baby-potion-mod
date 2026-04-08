@@ -33,7 +33,7 @@ public abstract class LivingEntityMixin {
   private void removeBabyEffect(final Collection<MobEffectInstance> effects, CallbackInfo ci) {
     for (MobEffectInstance effect : effects) {
       if (effect.is(BabyPotion.INFANTILISM_EFFECT)) {
-        LivingEntity entity = (LivingEntity)(Object) this;
+        LivingEntity entity = (LivingEntity)(Object)this;
         switch (entity) {
           case Tadpole tadpole -> BabyUtils.convertTadpoleToFrog(tadpole);
           case Guardian guardian -> BabyUtils.convertGuardianToElderGuardian(guardian);
@@ -47,11 +47,11 @@ public abstract class LivingEntityMixin {
 
   @Inject(method = "getDimensions", at = @At("RETURN"), cancellable = true)
   public void injectCustomHitbox(Pose pose, CallbackInfoReturnable<EntityDimensions> cir) {
-    LivingEntity entity = (LivingEntity)(Object) this;
+    LivingEntity entity = (LivingEntity)(Object)this;
 
     if (BabyUtils.maturityScaleIsBaby(entity) && !BabyUtils.isNativeBaby(entity) && !BabyUtils.isTransformable(entity)) {
       var entityType = entity.getType();
-      if (BabyUtils.maturityScaleIsChibi(entity)) {
+      if (BabyUtils.maturityScaleIsChibi(entity) || entityType == EntityType.CAMEL_HUSK) {
         if (entityType == EntityType.PLAYER || entityType == EntityType.MANNEQUIN) {
           cir.setReturnValue(this.getDefaultDimensions(pose));
           return;
@@ -63,11 +63,6 @@ public abstract class LivingEntityMixin {
           cir.setReturnValue(dimensions);
           return;
         }
-      }
-
-      if (entityType != EntityType.PLAYER && entityType != EntityType.MANNEQUIN) {
-        cir.setReturnValue(cir.getReturnValue().scale(2.0f));
-        return;
       }
     }
   }
@@ -84,7 +79,7 @@ public abstract class LivingEntityMixin {
 
   @Inject(method = "canBeAffected", at = @At("HEAD"), cancellable = true)
   private void immuneToInfantilism(MobEffectInstance effect, CallbackInfoReturnable<Boolean> cir) {
-    LivingEntity entity = (LivingEntity)(Object) this;
+    LivingEntity entity = (LivingEntity)(Object)this;
     if (
       effect.is(BabyPotion.INFANTILISM_EFFECT)
       && !entity.hasEffect(BabyPotion.INFANTILISM_EFFECT)
@@ -102,7 +97,7 @@ public abstract class LivingEntityMixin {
 
   @Inject(method = "onAttributeUpdated", at = @At("HEAD"))
   private void debugAttributeSync(final Holder<Attribute> attribute, CallbackInfo ci) {
-    LivingEntity entity = (LivingEntity) (Object) this;
+    LivingEntity entity = (LivingEntity)(Object)this;
     
     if (attribute.is(BabyPotion.MATURITY_SCALE_ID)) {
       entity.refreshDimensions();

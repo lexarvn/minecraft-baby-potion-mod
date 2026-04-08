@@ -6,7 +6,6 @@
 		"CreeperModelMixin",
 		"EnderManModelMixin",
 		"IllagerModelMixin",
-		"ItemInHandLayerMixin",
 		"LivingEntityRendererMixin",
 		"LivingEntityRenderStateMixin",
 		"PiglinModelMixin",

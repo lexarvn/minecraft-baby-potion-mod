@@ -23,7 +23,7 @@ public class InfantilismEffect extends MobEffect {
   );
 
   public InfantilismEffect() {
-    super(MobEffectCategory.NEUTRAL, 0xe1ac12);
+    super(MobEffectCategory.NEUTRAL, 0xE1A112);
   }
 
   @Override

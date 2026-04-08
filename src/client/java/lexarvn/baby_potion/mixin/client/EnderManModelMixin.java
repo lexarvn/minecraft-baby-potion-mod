@@ -19,14 +19,12 @@ public class EnderManModelMixin extends HumanoidModel<EndermanRenderState> {
 
   @Inject(method = "setupAnim", at = @At("TAIL"))
   public void applyHeadScale(final EndermanRenderState state, CallbackInfo ci) {
-    if (!((IChibiTweaksAccess) state).shouldUseChibiTweaks()){
-      return;
+    if (((IChibiTweaksAccess)state).shouldUseChibiTweaks()){
+      float headScale = 2.0f;
+
+      this.head.xScale = headScale;
+      this.head.yScale = headScale;
+      this.head.zScale = headScale;
     }
-
-    float headScale = state.isBaby ? 2.0f : 1.0f;
-
-    this.head.xScale = headScale;
-    this.head.yScale = headScale;
-    this.head.zScale = headScale;
   }
 }

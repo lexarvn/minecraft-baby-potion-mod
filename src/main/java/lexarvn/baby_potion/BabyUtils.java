@@ -193,7 +193,6 @@ public class BabyUtils {
       ),
       EntityType.CAMEL_HUSK
     );
-    //warden, manaquinne
   }
 
   public static EntityDimensions getBabyDimensions(LivingEntity entity) {
