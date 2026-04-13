@@ -1,6 +1,6 @@
 # Minecraft Fabric Mod: Baby Potion
 
-This mod adds a new potion to Minecraft 26.1.1 (Java 25, Fabric) brewed with the Golden Dandelion and an Awkward Potion. The potion temporarily reverts mobs to their baby form (or scales them down if no baby form exists). Mod can be used without client install unless using the `Chibi` mode.
+This mod adds a new potion to Minecraft 26.1.1 (Java 25, Fabric) brewed with the Golden Dandelion and an Awkward Potion. The potion temporarily reverts mobs to their baby form (or scales them down if no baby form exists). This mod requires both server and client to install the mod.
 
 ## Features
 - **Potion of Infantilism**: Brewed with Awkward Potion + Golden Dandelion.
