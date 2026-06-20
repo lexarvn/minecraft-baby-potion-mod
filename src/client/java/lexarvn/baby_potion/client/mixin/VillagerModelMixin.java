@@ -1,6 +1,6 @@
-package lexarvn.baby_potion.mixin.client;
+package lexarvn.baby_potion.client.mixin;
 
-import lexarvn.baby_potion.IChibiTweaksAccess;
+import lexarvn.baby_potion.client.IChibiTweaksAccess;
 
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;

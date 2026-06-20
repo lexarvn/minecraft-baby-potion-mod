@@ -1,6 +1,6 @@
 {
 	"required": true,
-	"package": "lexarvn.baby_potion.mixin.client",
+	"package": "lexarvn.baby_potion.client.mixin",
 	"compatibilityLevel": "JAVA_25",
 	"client": [
 		"CreeperModelMixin",

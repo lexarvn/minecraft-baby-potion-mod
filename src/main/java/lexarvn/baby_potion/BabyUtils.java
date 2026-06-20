@@ -13,6 +13,7 @@ import net.minecraft.world.entity.EntityAttachment;
 import net.minecraft.world.entity.EntityAttachments;
 import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EntityTypes;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.animal.frog.Frog;
 import net.minecraft.world.entity.animal.frog.Tadpole;
@@ -21,64 +22,64 @@ import net.minecraft.world.entity.monster.Guardian;
 
 public class BabyUtils {
   private static final Set<EntityType<?>> NOT_BABYABLE_ENTITY_TYPES = Set.of(
-    EntityType.TADPOLE,
-    EntityType.SLIME,
-    EntityType.MAGMA_CUBE,
-    EntityType.ALLAY,
-    EntityType.VEX,
-    EntityType.SHULKER,
-    EntityType.SNOW_GOLEM,
-    EntityType.IRON_GOLEM,
-    EntityType.COPPER_GOLEM,
-    EntityType.BLAZE,
-    EntityType.BREEZE,
-    EntityType.CREAKING,
-    EntityType.WITHER,
-    EntityType.GUARDIAN
+    EntityTypes.TADPOLE,
+    EntityTypes.SLIME,
+    EntityTypes.MAGMA_CUBE,
+    EntityTypes.ALLAY,
+    EntityTypes.VEX,
+    EntityTypes.SHULKER,
+    EntityTypes.SNOW_GOLEM,
+    EntityTypes.IRON_GOLEM,
+    EntityTypes.COPPER_GOLEM,
+    EntityTypes.BLAZE,
+    EntityTypes.BREEZE,
+    EntityTypes.CREAKING,
+    EntityTypes.WITHER,
+    EntityTypes.GUARDIAN
   );
 
   private static final Set<EntityType<?>> NATIVE_BABIES_ENTITY_TYPES = Set.of(
-    EntityType.ARMADILLO,
-    EntityType.AXOLOTL,
-    EntityType.BEE,
-    EntityType.CAMEL,
-    EntityType.CAT,
-    EntityType.CHICKEN,
-    EntityType.COW,
-    EntityType.DOLPHIN,
-    EntityType.DONKEY,
-    EntityType.DROWNED,
-    EntityType.FOX,
-    EntityType.GLOW_SQUID,
-    EntityType.GOAT,
-    EntityType.HAPPY_GHAST,
-    EntityType.HOGLIN,
-    EntityType.HORSE,
-    EntityType.HUSK,
-    EntityType.LLAMA,
-    EntityType.MOOSHROOM,
-    EntityType.MULE,
-    EntityType.NAUTILUS,
-    EntityType.OCELOT,
-    EntityType.PANDA,
-    EntityType.PIG,
-    EntityType.PIGLIN,
-    EntityType.POLAR_BEAR,
-    EntityType.RABBIT,
-    EntityType.SHEEP,
-    EntityType.SKELETON_HORSE,
-    EntityType.SNIFFER,
-    EntityType.SQUID,
-    EntityType.STRIDER,
-    EntityType.TRADER_LLAMA,
-    EntityType.TURTLE,
-    EntityType.VILLAGER,
-    EntityType.WOLF,
-    EntityType.ZOGLIN,
-    EntityType.ZOMBIE,
-    EntityType.ZOMBIE_HORSE,
-    EntityType.ZOMBIE_VILLAGER,
-    EntityType.ZOMBIFIED_PIGLIN
+    EntityTypes.ARMADILLO,
+    EntityTypes.AXOLOTL,
+    EntityTypes.BEE,
+    EntityTypes.CAMEL,
+    EntityTypes.CAT,
+    EntityTypes.CHICKEN,
+    EntityTypes.COW,
+    EntityTypes.DOLPHIN,
+    EntityTypes.DONKEY,
+    EntityTypes.DROWNED,
+    EntityTypes.FOX,
+    EntityTypes.GLOW_SQUID,
+    EntityTypes.GOAT,
+    EntityTypes.HAPPY_GHAST,
+    EntityTypes.HOGLIN,
+    EntityTypes.HORSE,
+    EntityTypes.HUSK,
+    EntityTypes.LLAMA,
+    EntityTypes.MOOSHROOM,
+    EntityTypes.MULE,
+    EntityTypes.NAUTILUS,
+    EntityTypes.OCELOT,
+    EntityTypes.PANDA,
+    EntityTypes.PIG,
+    EntityTypes.PIGLIN,
+    EntityTypes.POLAR_BEAR,
+    EntityTypes.RABBIT,
+    EntityTypes.SHEEP,
+    EntityTypes.SKELETON_HORSE,
+    EntityTypes.SNIFFER,
+    EntityTypes.SQUID,
+    EntityTypes.STRIDER,
+    EntityTypes.TRADER_LLAMA,
+    EntityTypes.TURTLE,
+    EntityTypes.VILLAGER,
+    EntityTypes.WOLF,
+    EntityTypes.ZOGLIN,
+    EntityTypes.ZOMBIE,
+    EntityTypes.ZOMBIE_HORSE,
+    EntityTypes.ZOMBIE_VILLAGER,
+    EntityTypes.ZOMBIFIED_PIGLIN
   );
 
   private record BabyScale(float simpleScale, float chibiScale, EntityDimensions chibiDimensions) {}
@@ -100,10 +101,10 @@ public class BabyUtils {
           .withEyeHeight(0.63f)
           .withAttachments(EntityAttachments.builder().attach(EntityAttachment.VEHICLE, 0.0f, 0.2f, 0.0f))
       ),
-      EntityType.VINDICATOR,
-      EntityType.ILLUSIONER,
-      EntityType.PILLAGER,
-      EntityType.EVOKER
+      EntityTypes.VINDICATOR,
+      EntityTypes.ILLUSIONER,
+      EntityTypes.PILLAGER,
+      EntityTypes.EVOKER
     );
     registerBabyScale(
       new BabyScale(
@@ -111,8 +112,8 @@ public class BabyUtils {
         0.34f,
         EntityDimensions.scalable(0.49f, 0.99f).withEyeHeight(0.63f)
       ),
-      EntityType.WITCH,
-      EntityType.WANDERING_TRADER
+      EntityTypes.WITCH,
+      EntityTypes.WANDERING_TRADER
     );
     registerBabyScale(
       new BabyScale(
@@ -122,7 +123,7 @@ public class BabyUtils {
           .withEyeHeight(0.78f)
           .withAttachments(EntityAttachments.builder().attach(EntityAttachment.VEHICLE, 0.0f, 0.1875f, 0.0f))
       ),
-      EntityType.PIGLIN_BRUTE
+      EntityTypes.PIGLIN_BRUTE
     );
     registerBabyScale(
       new BabyScale(
@@ -130,8 +131,8 @@ public class BabyUtils {
         0.38f,
         null
       ),
-      EntityType.MANNEQUIN,
-      EntityType.PLAYER
+      EntityTypes.MANNEQUIN,
+      EntityTypes.PLAYER
     );
     registerBabyScale(
       new BabyScale(
@@ -141,9 +142,9 @@ public class BabyUtils {
           .withEyeHeight(0.775f)
           .withAttachments(EntityAttachments.builder().attach(EntityAttachment.VEHICLE, 0.0f, 0.25f, 0.0f))
       ),
-      EntityType.PARCHED,
-      EntityType.SKELETON,
-      EntityType.STRAY
+      EntityTypes.PARCHED,
+      EntityTypes.SKELETON,
+      EntityTypes.STRAY
     );
     registerBabyScale(
       new BabyScale(
@@ -153,7 +154,7 @@ public class BabyUtils {
           .withEyeHeight(0.925f)
           .withAttachments(EntityAttachments.builder().attach(EntityAttachment.VEHICLE, 0.0f, 0.3f, 0.0f))
       ),
-      EntityType.WITHER_SKELETON
+      EntityTypes.WITHER_SKELETON
     );
     registerBabyScale(new BabyScale(
         0.49f, 
@@ -162,7 +163,7 @@ public class BabyUtils {
           .withEyeHeight(1.13f)
           .withAttachments(EntityAttachments.builder().attach(EntityAttachment.VEHICLE, 0.0f, 0.1f, 0.0f))
       ), 
-      EntityType.ENDERMAN
+      EntityTypes.ENDERMAN
     );
     registerBabyScale(new BabyScale(
         0.49f, 
@@ -171,7 +172,7 @@ public class BabyUtils {
           .withEyeHeight(1.05f)
           .withAttachments(EntityAttachments.builder().attach(EntityAttachment.VEHICLE, 0.0f, 0.1f, 0.0f))
       ), 
-      EntityType.WARDEN
+      EntityTypes.WARDEN
     );
     registerBabyScale(
       new BabyScale(
@@ -179,11 +180,11 @@ public class BabyUtils {
         0.38f, 
         EntityDimensions.scalable(0.49f, 0.80f).withEyeHeight(0.63f)
       ),
-      EntityType.CREEPER
+      EntityTypes.CREEPER
     );
     registerBabyScale(
       new BabyScale(0.2f, 0.2f, null),
-      EntityType.GHAST
+      EntityTypes.GHAST
     );
     registerBabyScale(
       new BabyScale(
@@ -191,7 +192,7 @@ public class BabyUtils {
         0.6f, 
         EntityDimensions.scalable(1.02f, 1.425f).withEyeHeight(1.365f)
       ),
-      EntityType.CAMEL_HUSK
+      EntityTypes.CAMEL_HUSK
     );
   }
 
@@ -202,7 +203,7 @@ public class BabyUtils {
         return scales.chibiDimensions();
       }
     }
-    if (entity.getType() == EntityType.CAMEL_HUSK) {
+    if (entity.getType() == EntityTypes.CAMEL_HUSK) {
       return CUSTOM_ENTITY_BABY_SCALES.get(entity.getType()).chibiDimensions();
     }
     return null;
@@ -236,10 +237,10 @@ public class BabyUtils {
   public static boolean isTransformable(LivingEntity entity) {
     var entityType = entity.getType();
 
-    return entityType == EntityType.FROG
-      || entityType == EntityType.TADPOLE
-      || entityType == EntityType.ELDER_GUARDIAN
-      || entityType == EntityType.GUARDIAN; 
+    return entityType == EntityTypes.FROG
+      || entityType == EntityTypes.TADPOLE
+      || entityType == EntityTypes.ELDER_GUARDIAN
+      || entityType == EntityTypes.GUARDIAN; 
   }
 
   public static boolean maturityScaleIsBaby(LivingEntity entity) {
@@ -256,7 +257,7 @@ public class BabyUtils {
 
   public static void convertFrogToTadpole(Frog frog, AfterConversion<Tadpole> afterConversion) {
     BabyPotion.LOGGER.info("Transforming " + frog.getName().getString() + " (" + frog.getVariant().getRegisteredName() + ") into a tadpole.");
-    frog.convertTo(EntityType.TADPOLE, ConversionParams.single(frog, false, false), (tadpole) -> {
+    frog.convertTo(EntityTypes.TADPOLE, ConversionParams.single(frog, false, false), (tadpole) -> {
       afterConversion.finalizeConversion(tadpole);
       frog.entityTags().forEach(tadpole::addTag);
       tadpole.finalizeSpawn(
@@ -273,7 +274,7 @@ public class BabyUtils {
 
   public static void convertTadpoleToFrog(Tadpole tadpole) {
     BabyPotion.LOGGER.info("Transforming " + tadpole.getName().getString() + " into a frog.");
-    tadpole.convertTo(EntityType.FROG, ConversionParams.single(tadpole, false, false), (frog) -> {
+    tadpole.convertTo(EntityTypes.FROG, ConversionParams.single(tadpole, false, false), (frog) -> {
       tadpole.entityTags().forEach(frog::addTag);
       frog.finalizeSpawn(
         (ServerLevel)tadpole.level(),
@@ -289,7 +290,7 @@ public class BabyUtils {
 
   public static void convertElderGuardianToGuardian(ElderGuardian elderGuardian, AfterConversion<Guardian> afterConversion) {
     BabyPotion.LOGGER.info("Transforming " + elderGuardian.getName().getString() + " into a guardian.");
-    elderGuardian.convertTo(EntityType.GUARDIAN, ConversionParams.single(elderGuardian, false, false), (guardian) -> {
+    elderGuardian.convertTo(EntityTypes.GUARDIAN, ConversionParams.single(elderGuardian, false, false), (guardian) -> {
       afterConversion.finalizeConversion(guardian);
       elderGuardian.entityTags().forEach(guardian::addTag);
       guardian.finalizeSpawn(
@@ -306,7 +307,7 @@ public class BabyUtils {
 
   public static void convertGuardianToElderGuardian(Guardian guardian) {
     BabyPotion.LOGGER.info("Transforming " + guardian.getName().getString() + " into an elder guardian.");
-    guardian.convertTo(EntityType.ELDER_GUARDIAN, ConversionParams.single(guardian, false, false), (elderGuardian) -> {
+    guardian.convertTo(EntityTypes.ELDER_GUARDIAN, ConversionParams.single(guardian, false, false), (elderGuardian) -> {
       guardian.entityTags().forEach(elderGuardian::addTag);
       elderGuardian.finalizeSpawn(
         (ServerLevel)guardian.level(),

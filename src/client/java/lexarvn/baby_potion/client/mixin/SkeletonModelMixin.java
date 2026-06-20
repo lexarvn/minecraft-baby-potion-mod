@@ -1,27 +1,26 @@
-package lexarvn.baby_potion.mixin.client;
-
-import lexarvn.baby_potion.IChibiTweaksAccess;
+package lexarvn.baby_potion.client.mixin;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import lexarvn.baby_potion.client.IChibiTweaksAccess;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.ModelPart;
-import net.minecraft.client.model.monster.piglin.PiglinModel;
-import net.minecraft.client.renderer.entity.state.PiglinRenderState;
+import net.minecraft.client.model.monster.skeleton.SkeletonModel;
+import net.minecraft.client.renderer.entity.state.SkeletonRenderState;
 
-@Mixin(PiglinModel.class)
-public class PiglinModelMixin extends HumanoidModel<PiglinRenderState> {
-  public PiglinModelMixin(ModelPart root) {
+@Mixin(SkeletonModel.class)
+public class SkeletonModelMixin<S extends SkeletonRenderState> extends HumanoidModel<S> {
+  public SkeletonModelMixin(ModelPart root) {
     super(root);
   }
 
   @Inject(method = "setupAnim", at = @At("TAIL"))
-  public void applyHeadScale(final PiglinRenderState state, CallbackInfo ci) {
+  public void applyHeadScale(final S state, CallbackInfo ci) {
     if (((IChibiTweaksAccess)state).shouldUseChibiTweaks()){
-      float headScale = state.isBrute ? 2.5f : 1.0f;
+      float headScale = 2.0f;
 
       this.head.xScale = headScale;
       this.head.yScale = headScale;

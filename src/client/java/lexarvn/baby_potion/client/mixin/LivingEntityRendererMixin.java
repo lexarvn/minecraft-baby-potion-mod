@@ -1,4 +1,4 @@
-package lexarvn.baby_potion.mixin.client;
+package lexarvn.baby_potion.client.mixin;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -6,7 +6,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import lexarvn.baby_potion.BabyUtils;
-import lexarvn.baby_potion.IChibiTweaksAccess;
+import lexarvn.baby_potion.client.IChibiTweaksAccess;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.world.entity.LivingEntity;

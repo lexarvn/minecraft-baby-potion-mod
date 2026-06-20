@@ -1,8 +1,8 @@
-package lexarvn.baby_potion.mixin.client;
+package lexarvn.baby_potion.client.mixin;
 
 import org.spongepowered.asm.mixin.Mixin;
 
-import lexarvn.baby_potion.IChibiTweaksAccess;
+import lexarvn.baby_potion.client.IChibiTweaksAccess;
 import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 
 @Mixin(LivingEntityRenderState.class)

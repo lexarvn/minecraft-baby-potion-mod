@@ -1,24 +1,23 @@
-package lexarvn.baby_potion.mixin.client;
+package lexarvn.baby_potion.client.mixin;
 
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import lexarvn.baby_potion.IChibiTweaksAccess;
-import net.minecraft.client.model.HumanoidModel;
+import lexarvn.baby_potion.client.IChibiTweaksAccess;
 import net.minecraft.client.model.geom.ModelPart;
-import net.minecraft.client.model.player.PlayerModel;
-import net.minecraft.client.renderer.entity.state.AvatarRenderState;
+import net.minecraft.client.model.monster.warden.WardenModel;
+import net.minecraft.client.renderer.entity.state.WardenRenderState;
 
-@Mixin(PlayerModel.class)
-public class PlayerModelMixin extends HumanoidModel<AvatarRenderState> {
-  public PlayerModelMixin(ModelPart root) {
-    super(root);
-  }
+@Mixin(WardenModel.class)
+public class WardenModelMixin {
+  @Shadow @Final private ModelPart head;
 
   @Inject(method = "setupAnim", at = @At("TAIL"))
-  public void applyHeadScale(final AvatarRenderState state, CallbackInfo ci) {
+  public void applyHeadScale(final WardenRenderState state, CallbackInfo ci) {
     if (((IChibiTweaksAccess)state).shouldUseChibiTweaks()){
       float headScale = 2.0f;
 

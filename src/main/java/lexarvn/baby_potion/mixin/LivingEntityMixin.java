@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.EntityDimensions;
-import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EntityTypes;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -51,8 +51,8 @@ public abstract class LivingEntityMixin {
 
     if (BabyUtils.maturityScaleIsBaby(entity) && !BabyUtils.isNativeBaby(entity) && !BabyUtils.isTransformable(entity)) {
       var entityType = entity.getType();
-      if (BabyUtils.maturityScaleIsChibi(entity) || entityType == EntityType.CAMEL_HUSK) {
-        if (entityType == EntityType.PLAYER || entityType == EntityType.MANNEQUIN) {
+      if (BabyUtils.maturityScaleIsChibi(entity) || entityType == EntityTypes.CAMEL_HUSK) {
+        if (entityType == EntityTypes.PLAYER || entityType == EntityTypes.MANNEQUIN) {
           cir.setReturnValue(this.getDefaultDimensions(pose));
           return;
         }
