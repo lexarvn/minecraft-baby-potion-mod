@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:potion",
+    "potion_contents": { "potions": "baby_potion:long_infantilism_potion" }
+  },
+  "reagent": { "item": "minecraft:gunpowder" },
+  "output": {
+    "id": "minecraft:splash_potion",
+    "components": { "minecraft:potion_contents": { "potion": "baby_potion:long_infantilism_potion" } }
+  }
+}
+

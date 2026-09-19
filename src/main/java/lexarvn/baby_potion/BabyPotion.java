@@ -2,7 +2,6 @@ package lexarvn.baby_potion;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleBuilder;
-import net.fabricmc.fabric.api.registry.FabricPotionBrewingBuilder;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -12,9 +11,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.Attribute.Sentiment;
 import net.minecraft.world.entity.ai.attributes.RangedAttribute;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potion;
-import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.gamerules.GameRule;
 import net.minecraft.world.level.gamerules.GameRuleCategory;
 
@@ -45,6 +42,12 @@ public class BabyPotion implements ModInitializer {
     new Potion("infantilism", new MobEffectInstance(BabyPotion.INFANTILISM_EFFECT, 20 * 60 * 3))
   );
 
+  public static Holder<@NonNull Potion> LONG_INFANTILISM_POTION = Registry.registerForHolder(
+    BuiltInRegistries.POTION, 
+    Identifier.fromNamespaceAndPath(BabyPotion.MOD_ID, "long_infantilism_potion"),
+    new Potion("infantilism", new MobEffectInstance(BabyPotion.INFANTILISM_EFFECT, 20 * 60 * 8))
+  );
+
   public static final GameRule<BabyGameRules.SCALE_NON_NATIVE_BABIES> BABY_RULE_SCALE_NON_NATIVE_BABIES = GameRuleBuilder
     .forEnum(BabyGameRules.SCALE_NON_NATIVE_BABIES.OFF)
     .category(GameRuleCategory.MISC)
@@ -53,10 +56,5 @@ public class BabyPotion implements ModInitializer {
   @Override
   public void onInitialize() {
     LOGGER.info(MOD_ID + " has been initialized.");
-    FabricPotionBrewingBuilder.BUILD.register(builder -> builder.addMix(
-      Potions.AWKWARD, 
-      Items.GOLDEN_DANDELION,
-      INFANTILISM_POTION
-    ));
   }
 }
